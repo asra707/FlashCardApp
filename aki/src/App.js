@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import FlashcardList from './components/FlashcardList';
+import './style.css'
 
 function App() {
+  const [flashcards, setFlashcards] = useState(SAMPLE)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FlashcardList flashcards = {flashcards} />
+    
   );
 }
+
+const SAMPLE =[
+  {
+      "id": 1,
+      "title": "TCP Protocol",
+      "category": "Networking",
+      "content": "TCP establishes connections between devices before forwarding traffic. It ensures reliable and ordered delivery of segments while controlling data flow to manage limited resources."
+  },
+  {
+    "id": 2,
+    "title": "UDP Protocol",
+    "category": "Networking",
+    "content": "UDP reconstructs data in received order without resending lost segments. It operates without session establishment or informing the sender about resource availability."
+  }
+
+]
 
 export default App;
