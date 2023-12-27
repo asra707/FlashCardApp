@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 
+
 export default function Flashcard({ flashcard }) {
   const [flip, setFlip] = useState(false);
+
 
   const handleCardClick = () => {
     setFlip(!flip);
   };
+
 
   return (
     <div
@@ -17,11 +20,12 @@ export default function Flashcard({ flashcard }) {
         {flashcard.title}
       </div>
 
+
       <div className="back">
         {flashcard.content}
       </div>
 
-      {/* {flip ? flashcard.content : flashcard. title}  */}
+
       </div>
     </div>
   );

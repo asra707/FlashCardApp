@@ -3,6 +3,7 @@ import Flashcard from './Flashcard';
 //import './style.css'
 
 
+
 export default function FlashcardList({ flashcards }) {  return (
     <div className="grid">
       {flashcards.map(flashcard =>{
