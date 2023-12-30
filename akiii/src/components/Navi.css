@@ -1,0 +1,28 @@
+.Navigation {
+    background-color: #28322b;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .Navigation a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+  }
+  
+  .Navigation a:hover {
+    background-color: #111;
+  }
+  
+  .Navigation a.active {
+    background-color: #4a9076;
+  }
+  
+  .Navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }

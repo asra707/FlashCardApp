@@ -1,7 +1,5 @@
 import React from 'react'
 import Flashcard from './Flashcard';
-//import './style.css'
-
 
 
 export default function FlashcardList({ flashcards }) {  return (
