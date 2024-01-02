@@ -3,7 +3,6 @@ body {
   padding-top: 50px;
 }
 
-
 .card {
   display: flex;
   justify-content: center;
@@ -80,7 +79,6 @@ body {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  /* background-color: #6a7fe8; */
   background-color: #4076afc5;
   color: white;
   border: none;
@@ -93,16 +91,18 @@ body {
   display: block;
 }
 
-.edit-popup {
+.last-modified {
+  font-size: 10px; 
+  color: #435fea;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  z-index: 9999;
-  padding: 20px;
-  border: 1px solid #ccc;
-
+  bottom: 12px; 
+  left: 5px;
 }
 
-
+.status {
+  font-size: 10px; 
+  color: #435fea;
+  position: absolute;
+  bottom: 0px;  
+  left: 5px;
+}

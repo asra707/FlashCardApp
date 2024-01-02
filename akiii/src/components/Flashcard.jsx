@@ -52,6 +52,8 @@ export default function Flashcard({ flashcard, onDelete, onEdit }) {
 
         <div className="back">
           {flashcard.content}
+          <p className="last-modified">Last Modified: {flashcard.lastModified}</p>
+          <p className="status">Status: {flashcard.status}</p>
           {showDeleteButton && (
             <button className="delete-button" onClick={handleDelete}>
               Delete
@@ -62,8 +64,8 @@ export default function Flashcard({ flashcard, onDelete, onEdit }) {
       </div>
       
       {showEdit && (
-        <div className="edit-overlay">
-          <div className="edit-popup">
+         <div className="edit-overlay">
+         <div className="edit-popup">
             <EditFlashcard
               flashcard={flashcard}
               onEdit={onEdit}

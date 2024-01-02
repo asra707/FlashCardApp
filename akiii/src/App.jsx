@@ -20,14 +20,12 @@ function App() {
 
   const fetchFlashcards = () => {
     fetch('http://localhost:3001/flashcards')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Request failed with status: ${response.status}`);
-        }
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((flashcards) => {
-        setFlashcards(flashcards);
+        const sortedFlashcards = flashcards.sort((a, b) => {
+          return new Date(b.lastModified) - new Date(a.lastModified);
+        });
+        setFlashcards(sortedFlashcards);
       })
       .catch((error) => {
         setError('There was a problem fetching data. Please try again.');
@@ -39,12 +37,18 @@ function App() {
   }
 
   const addFlashcard = (newFlashcard) => {
+    const modifiedFlashcard = {
+      ...newFlashcard,
+      lastModified: new Date().toISOString(), // Set current date/time
+      status: 'Noted', // Set initial status
+    };
+  
     fetch('http://localhost:3001/flashcards', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newFlashcard),
+      body: JSON.stringify(modifiedFlashcard),
     })
       .then((response) => {
         if (!response.ok) {
@@ -83,12 +87,17 @@ function App() {
 
   
   const editFlashcard = (editedFlashcard) => {
+    const modifiedFlashcard = {
+      ...editedFlashcard,
+      lastModified: new Date().toISOString(), // Update modification date/time
+    };
+  
     fetch(`http://localhost:3001/flashcards/${editedFlashcard.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(editedFlashcard),
+      body: JSON.stringify(modifiedFlashcard),
     })
       .then((response) => {
         if (!response.ok) {
