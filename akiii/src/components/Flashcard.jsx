@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import EditFlashcard from './EditFlashcard';
 
-export default function Flashcard({ flashcard, onDelete }) {
+export default function Flashcard({ flashcard, onDelete, onEdit }) {
   const [flip, setFlip] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
 
   const handleCardClick = () => {
     setFlip(!flip);
@@ -12,12 +14,24 @@ export default function Flashcard({ flashcard, onDelete }) {
     onDelete(flashcard.id);
   };
 
+  const handleEdit = () => {
+    setShowEdit(true);
+  };
+
+  const handleCloseEdit = () => {
+    setShowEdit(false);
+  };
+ 
   return (
     <div
       className={`card ${flip ? 'flip' : ''}`}
       onClick={handleCardClick}
-      onMouseEnter={() => setShowDeleteButton(true)}
-      onMouseLeave={() => setShowDeleteButton(false)}
+      onMouseEnter={() => {
+        setShowDeleteButton(true);
+      }}
+      onMouseLeave={() => {
+        setShowDeleteButton(false);
+      }}
     >
 
       <div className="fcard">
@@ -28,6 +42,12 @@ export default function Flashcard({ flashcard, onDelete }) {
               Delete
             </button>
           )}
+          {showDeleteButton && (
+            <button className="edit-button" onClick={handleEdit}>
+              Edit
+            </button>
+          )}
+
         </div>
 
         <div className="back">
@@ -40,6 +60,18 @@ export default function Flashcard({ flashcard, onDelete }) {
         </div>
 
       </div>
+      
+      {showEdit && (
+        <div className="edit-overlay">
+          <div className="edit-popup">
+            <EditFlashcard
+              flashcard={flashcard}
+              onEdit={onEdit}
+              onClose={handleCloseEdit}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

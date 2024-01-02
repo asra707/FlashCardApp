@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddFlashcard.css';
 
 export default function AddFlashcard({ addFlashcard }) {
   const [title, setTitle] = useState('');
@@ -14,7 +15,7 @@ export default function AddFlashcard({ addFlashcard }) {
   };
 
   return (
-    <div className="add-flashcard">
+    <div className="create">
       <h2>Add Flashcard</h2>
       <form onSubmit={handleSubmit}>
         <input

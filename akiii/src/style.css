@@ -71,8 +71,38 @@ body {
 .list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap between cards */
-  justify-content: center; /* Align cards to the center horizontally */
-  margin: 0 auto; /* Center the cards */
+  gap: 20px; 
+  justify-content: center;
+  margin: 0 auto; 
 }
+
+.edit-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  /* background-color: #6a7fe8; */
+  background-color: #4076afc5;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.card:hover .edit-button {
+  display: block;
+}
+
+.edit-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 9999;
+  padding: 20px;
+  border: 1px solid #ccc;
+
+}
+
 

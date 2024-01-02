@@ -4,13 +4,15 @@ import Navi from './components/Navi';
 import Home from './Home';
 import Contact from './Contact';
 import FlashcardList from './components/FlashcardList';
+import AddFlashcard from './components/AddFlashcard';
+import EditFlashcard from './components/EditFlashcard';
 import './style.css';
 
-import AddFlashcard from './components/AddFlashcard';
 
 function App() {
   const [flashcards, setFlashcards] = useState([]);
   const [error, setError] = useState(null);
+
 
   useEffect(() => {
     fetchFlashcards();
@@ -79,6 +81,30 @@ function App() {
   };
 
 
+  
+  const editFlashcard = (editedFlashcard) => {
+    fetch(`http://localhost:3001/flashcards/${editedFlashcard.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(editedFlashcard),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Request failed with status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(() => {
+        fetchFlashcards();
+      })
+      .catch((error) => {
+        setError('There was a problem editing the flashcard. Please try again.');
+      });
+};
+ 
+
   return (
     <Router>
       <div>
@@ -88,10 +114,20 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/flashcards" element={ <>
             <AddFlashcard addFlashcard={addFlashcard} />
-            <FlashcardList flashcards={flashcards}  onDelete={deleteFlashcard}/> 
+            <FlashcardList 
+              flashcards={flashcards}  
+              onDelete={deleteFlashcard}
+              onEdit={editFlashcard} 
+
+            /> 
             </>
+          
             } 
           />
+          <Route
+  path="/flashcards/:id/edit"
+  element={<EditFlashcard flashcards={flashcards} onEdit={editFlashcard} />}
+/>
         </Routes>
       </div>
     </Router>
