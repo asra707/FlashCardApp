@@ -12,7 +12,8 @@ import './style.css';
 function App() {
   const [flashcards, setFlashcards] = useState([]);
   const [error, setError] = useState(null);
-
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filterStatus, setFilterStatus] = useState('');
 
   useEffect(() => {
     fetchFlashcards();
@@ -39,8 +40,8 @@ function App() {
   const addFlashcard = (newFlashcard) => {
     const modifiedFlashcard = {
       ...newFlashcard,
-      lastModified: new Date().toISOString(), // Set current date/time
-      status: 'Noted', // Set initial status
+      lastModified: new Date().toISOString(),
+      status: 'Noted', 
     };
   
     fetch('http://localhost:3001/flashcards', {
@@ -89,7 +90,7 @@ function App() {
   const editFlashcard = (editedFlashcard) => {
     const modifiedFlashcard = {
       ...editedFlashcard,
-      lastModified: new Date().toISOString(), // Update modification date/time
+      lastModified: new Date().toISOString(),
     };
   
     fetch(`http://localhost:3001/flashcards/${editedFlashcard.id}`, {
@@ -111,8 +112,9 @@ function App() {
       .catch((error) => {
         setError('There was a problem editing the flashcard. Please try again.');
       });
-};
+  };
  
+  //yeesh
 
   return (
     <Router>
@@ -122,21 +124,38 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/flashcards" element={ <>
+            <div className="search">
+                  <input className="search-field"
+                    type="text"
+                    placeholder="Search Flashcards"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  <select
+                    value={filterStatus}
+                    onChange={(e) => setFilterStatus(e.target.value)}
+                  >
+                    <option value="">All</option>
+                    <option value="Learned">Learned</option>
+                    <option value="Want to Learn">Want to Learn</option>
+                    <option value="Noted">Noted</option>
+                  </select>
+                </div>
+                
             <AddFlashcard addFlashcard={addFlashcard} />
             <FlashcardList 
               flashcards={flashcards}  
               onDelete={deleteFlashcard}
               onEdit={editFlashcard} 
-
+              searchTerm={searchTerm}
+              filterStatus={filterStatus}
             /> 
             </>
-          
             } 
           />
-          <Route
-  path="/flashcards/:id/edit"
-  element={<EditFlashcard flashcards={flashcards} onEdit={editFlashcard} />}
-/>
+          <Route path="/flashcards/:id/edit" element={
+          <EditFlashcard flashcards={flashcards} onEdit={editFlashcard} />}
+          />
         </Routes>
       </div>
     </Router>

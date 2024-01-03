@@ -1,0 +1,43 @@
+.Contact {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #69876a;
+    border-radius: 8px;
+    background-color: #f0f1e8a6;
+
+  }
+  
+  h4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+.message-field,
+.email-field,
+.subject-field {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    margin-left: 14%;
+    border-radius: 5px;
+    align-items: center;
+    background-color: #578cc4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  

@@ -7,7 +7,7 @@ const projects = [
     link: 'https://github.com/asra707/web_assignment_01', 
   },
   {
-    title: 'Project 2',
+    title: 'Product List',
     description: 'This project contains HTML, CSS, and JavaScript files compiled to create a webpage showcasing product details obtained through an API.',
     link: 'https://github.com/asra707/products_info', 
   },
@@ -34,10 +34,8 @@ export default function Home() {
             ))}
           </ul>
         </div>
-
-        {/* <div className="des2"> </div> */}
-        
       </div>
+      
     </div>
   );
 }

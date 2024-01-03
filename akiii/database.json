@@ -3,15 +3,13 @@
     {
       "id": 1,
       "title": "TCP Protocol",
-      "category": "Networking",
       "content": "TCP establishes connections between devices before forwarding traffic. It ensures reliable and ordered delivery of segments while controlling data flow to manage limited resources.",
       "status": "Learned",
-      "lastModified": "2024-01-02T23:43:01.265Z"
+      "lastModified": "2024-01-03T01:16:43.727Z"
     },
     {
       "id": 2,
       "title": "UDP Protocol",
-      "category": "Networking",
       "content": "UDP reconstructs data in received order without resending lost segments. It operates without session establishment or informing the sender about resource availability.",
       "status": "Want to Learn",
       "lastModified": "2023-11-20T08:30:00Z"
@@ -19,7 +17,6 @@
     {
       "id": 3,
       "title": "Presentation Layer Functions",
-      "category": "Networking",
       "content": "The presentation layer formats, compresses, and encrypts data for transmission. It sets standards for file formats like video (MKV, MPG, MOV) and image formats (GIF, JPG, PNG).",
       "status": "Noted",
       "lastModified": "2023-10-15T16:45:00Z"
@@ -27,7 +24,6 @@
     {
       "id": 4,
       "title": "Client/Server Model",
-      "category": "Networking",
       "content": "The client/server model involves clients requesting data from servers. Application layer protocols define request/response formats, handling data transfer, authentication, and file identification.",
       "status": "Learned",
       "lastModified": "2023-09-07T14:20:00Z"
@@ -35,7 +31,6 @@
     {
       "id": 5,
       "title": "P2P Applications",
-      "category": "Networking",
       "content": "P2P allows devices to act as both clients and servers. Some use a hybrid system where resource sharing is decentralized, but resource location indexes are stored centrally.",
       "status": "Want to Learn",
       "lastModified": "2023-08-01T10:00:00Z"
@@ -43,7 +38,6 @@
     {
       "id": 6,
       "title": "Session Establishment in TCP",
-      "category": "Networking",
       "content": "TCP negotiates and establishes a permanent connection (session) between devices. This allows managing traffic volume and closely controlling communication data.",
       "status": "Learned",
       "lastModified": "2023-07-10T11:55:00Z"
@@ -51,15 +45,13 @@
     {
       "id": 7,
       "title": "Reliable Delivery in TCP",
-      "category": "Networking",
       "content": "TCP ensures that each sent segment arrives at the destination by managing segment reliability, preventing corruption, and handling lost segments.",
       "status": "Noted",
-      "lastModified": "2023-06-05T09:40:00Z"
+      "lastModified": "2024-01-03T10:34:45.436Z"
     },
     {
       "id": 8,
       "title": "Same-Order Delivery in TCP",
-      "category": "Networking",
       "content": "TCP orders and numbers segments to ensure reassembly in the correct order, avoiding issues caused by different transmission rates across networks.",
       "status": "Learned",
       "lastModified": "2023-05-12T08:15:00Z"
@@ -67,7 +59,6 @@
     {
       "id": 9,
       "title": "Flow Control in TCP",
-      "category": "Networking",
       "content": "TCP regulates data flow between hosts by managing data transmission rates, preventing overwhelming of receiving host resources and the need for data retransmission.",
       "status": "Want to Learn",
       "lastModified": "2023-04-20T17:30:00Z"
@@ -75,15 +66,13 @@
     {
       "id": 10,
       "title": "UDP Statelessness",
-      "category": "Networking",
       "content": "UDP operates as a stateless protocol, where neither client nor server tracks communication session state. Reliability, if needed, must be handled at the application level.",
-      "status": "Noted",
-      "lastModified": "2023-03-18T15:25:00Z"
+      "status": "Learned",
+      "lastModified": "2024-01-03T15:16:26.725Z"
     },
     {
       "id": 11,
       "title": "TCP/IP Layers",
-      "category": "Networking",
       "content": "TCP/IP consists of multiple layers each performing specific functions. TCP operates on the transport layer, providing services like segmentation, reassembly, reliability, and flow control.",
       "status": "Learned",
       "lastModified": "2023-02-14T13:45:00Z"
@@ -91,7 +80,6 @@
     {
       "id": 12,
       "title": "UDP Datagram Transmission",
-      "category": "Networking",
       "content": "UDP sends datagrams as best efforts without ensuring reliable delivery. Lost segments are not resent, and the protocol focuses on quick data transmission suitable for live video and voice applications.",
       "status": "Want to Learn",
       "lastModified": "2023-01-10T11:10:00Z"
@@ -99,7 +87,6 @@
     {
       "id": 13,
       "title": "P2P Hybrid Systems",
-      "category": "Networking",
       "content": "Some P2P systems use hybrid setups, combining decentralized resource sharing with a centralized directory storing resource location indexes.",
       "status": "Noted",
       "lastModified": "2022-12-05T10:05:00Z"
@@ -107,7 +94,6 @@
     {
       "id": 14,
       "title": "Presentation Layer Encryption",
-      "category": "Networking",
       "content": "The presentation layer encrypts data for secure transmission. It handles data formatting, compression, and encryption, ensuring compatibility between source and destination devices.",
       "status": "Learned",
       "lastModified": "2022-11-20T08:30:00Z"
@@ -115,7 +101,6 @@
     {
       "id": 15,
       "title": "Client/Server Data Transfer",
-      "category": "Networking",
       "content": "In client/server networks, data transfers occur between clients requesting data and servers responding to these requests. The application layer protocols manage these exchanges.",
       "status": "Want to Learn",
       "lastModified": "2022-10-10T16:20:00Z"
@@ -133,6 +118,20 @@
       "lastModified": "2024-01-02T23:57:56.431Z",
       "status": "Noted",
       "id": 17
+    },
+    {
+      "title": "test2",
+      "content": "content2",
+      "lastModified": "2024-01-03T12:45:01.847Z",
+      "status": "Noted",
+      "id": 18
+    },
+    {
+      "title": "test707",
+      "content": "idk",
+      "lastModified": "2024-01-03T15:15:42.168Z",
+      "status": "Noted",
+      "id": 19
     }
   ]
 }

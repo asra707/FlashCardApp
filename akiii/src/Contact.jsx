@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './Contact.css';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ export default function Contact() {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/messages', {
+      const response = await fetch('http://localhost:4000/messages', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,6 +30,11 @@ export default function Contact() {
 
       if (response.ok) {
         console.log('Message sent successfully!');
+        setFormData({
+          subject: '',
+          email: '',
+          message: '',
+        });
       } else {
         console.error('Error sending message');
       }
@@ -42,7 +48,7 @@ export default function Contact() {
       <h4>You can contact me here but please don't</h4>
       <form onSubmit={handleSubmit}>
         <label htmlFor="subject">Subject:</label>
-        <input
+        <input className="subject-field"
           type="text"
           name="subject"
           value={formData.subject}
@@ -51,7 +57,7 @@ export default function Contact() {
         />
         <br />
         <label htmlFor="email">Email:</label>
-        <input
+        <input className="email-field"
           type="email"
           name="email"
           value={formData.email}
@@ -61,14 +67,14 @@ export default function Contact() {
         <br />
         <label htmlFor="message">Message:</label>
         <br />
-        <textarea
+        <textarea className="message-field"
           name="message"
           value={formData.message}
           placeholder="Message"
           onChange={handleInputChange}
         />
         <br />
-        <input type="submit" value="Send" />
+        <input className="submit-btn" type="submit" value="Send" />
       </form>
     </div>
   );

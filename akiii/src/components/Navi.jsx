@@ -5,7 +5,7 @@ export default function Navi() {
   return (
     <div className="Navigation">
       <NavLink to="/" >Home</NavLink>
-      <NavLink to="/Contact">Contact Us</NavLink>
+      <NavLink to="/Contact">Contact Me</NavLink>
       <NavLink to="/flashcards"> Flashcards </NavLink>
 
     </div>
