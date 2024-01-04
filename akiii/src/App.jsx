@@ -117,7 +117,7 @@ function App() {
       <div>
         <Navi />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/FlashCardApp" element={<Home />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/flashcards" element={ <>
             <div className="search">
