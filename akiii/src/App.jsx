@@ -29,13 +29,9 @@ function App() {
         setFlashcards(sortedFlashcards);
       })
       .catch((error) => {
-        setError('There was a problem fetching data. Please try again.');
+        window.alert("Error: " + error.message);
       });
   };
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
   const addFlashcard = (newFlashcard) => {
     const modifiedFlashcard = {
