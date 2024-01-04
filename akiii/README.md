@@ -17,28 +17,28 @@ Ensure the following are installed on your machine:
 
 1. If you haven't installed create-react-app globally, do so by running:
 
-npm install -g create-react-app
+- npm install -g create-react-app
 
 2. Create a new React application by executing:
 
-npx create-react-app akiii
+- npx create-react-app akiii
 
 3. Once the app is created, navigate to the project directory:
 
-cd akiii
+- cd akiii
 
 4. Start the React app:
 
-npm start
+- npm start
 
 5. If you haven't installed JSON-Server globally, install it:
 
-npm install -g json-server
+- npm install -g json-server
 
 6. Run the following commands to start JSON-Server and watch the respective JSON files:
 
-json-server --watch database.json --port 3001
-json-server --watch messages.json --port 4000
+- json-server --watch database.json --port 3001
+- json-server --watch messages.json --port 4000
 
 
 ### Usage
