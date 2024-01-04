@@ -16,7 +16,7 @@ export default function AddFlashcard({ addFlashcard }) {
 
   return (
     <div className="create">
-      <h2>Add Flashcard</h2>
+      <h2>Create a new Flashcard!</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

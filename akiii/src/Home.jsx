@@ -3,12 +3,12 @@ import React from 'react';
 const projects = [
   {
     title: 'Digital Card',
-    description: 'This project comtains HTML, and CSS files compiled to create a webpage showcasing pesonal digital card.',
+    description: 'This project contains HTML, and CSS files compiled to create a web page showcasing personal digital card.',
     link: 'https://github.com/asra707/web_assignment_01', 
   },
   {
     title: 'Product List',
-    description: 'This project contains HTML, CSS, and JavaScript files compiled to create a webpage showcasing product details obtained through an API.',
+    description: 'This project contains HTML, CSS, and JavaScript files compiled to create a web page showcasing product details obtained through an API.',
     link: 'https://github.com/asra707/products_info', 
   },
 ];
